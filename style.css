@@ -1,21 +1,22 @@
+/* General Body Styling */
 body {
-    font-family: 'Courier';
+    font-family: 'Courier', sans-serif;
     background-color: white;
     font-size: 13pt;
+    margin: 0;
+    padding: 5px;
 }
 
+/* Navigation Bar */
 #nav {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     width: 100%;
-}
-
-.nav_button {
-    background-color: transparent;
-    border: transparent;
-    color: white;
+    padding: 10px 5%;
+    z-index: 100;
+    box-sizing: border-box;
 }
 
 #logo {
@@ -24,13 +25,42 @@ body {
     margin: 5px;
 }
 
+#title {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    font-size: 18pt;
+}
+
+.nav_button {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    font-size: 14pt;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease;
+}
+
+/* Underline effect on hover */
+.nav_button:hover {
+    text-decoration: underline;
+}
+
+/* To ensure the buttons are evenly spaced and visible */
+#nav .nav_button {
+    margin: 0 10px; /* Give some space between the buttons */
+}
+
+/* Background Section */
 #background {
-    width: 100%; /* Make the image take up the full width of the container */
+    width: 100%;
     height: 70vh;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #background img {
@@ -41,36 +71,160 @@ body {
 
 #background h1 {
     position: absolute;
-    font-size: 60pt;    
+    font-size: 60pt;
     text-decoration: underline;
     color: white;
-
+    z-index: 1;
 }
 
+/* About Section */
 #about {
-    width: 40%;
+    width: 70%;
     margin: auto;
     padding: 40px;
     text-align: center;
 }
 
+/* Outline Section (Report Section) */
 #outline {
     width: 100%;
-    height: 30vh;
+    height: auto;
     background-color: grey;
     padding: 7px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 #outline #title {
     font-size: 20pt;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
+/* Centering the content within the outline */
 .center {
     display: flex;
-    width: 70%;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
     margin: auto;
 }
 
-.center * {
+.center > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+}
+
+.center img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.center div {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Report Form Section */
+#form-section {
+    width: 70%;
     margin: auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#form-section h2 {
+    font-size: 24pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#form-section label {
+    font-size: 14pt;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#form-section input,
+#form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 14pt;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-section textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#form-section .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16pt;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#form-section .submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Map Styling (For report page) */
+#map {
+    width: 100%;
+    height: 400px; /* Adjust height as necessary */
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #background h1 {
+        font-size: 40pt;
+    }
+
+    #about {
+        width: 90%;
+    }
+
+    #form-section {
+        width: 90%;
+    }
+
+    .center > div {
+        width: 80%; /* Adjust center content width for small screens */
+    }
+
+    #map {
+        height: 300px; /* Adjust map height for smaller screens */
+    }
+}
+
+.clickable {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Makes the whole area clickable */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }

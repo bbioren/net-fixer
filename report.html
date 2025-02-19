@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Fix - Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div id="nav">
+        <img id="logo" src="assets/ball_logo.png" alt="broken logo">
+        <button id="title"><strong>NET FIX</strong></button>
+
+        <button id="report" class="nav_button">REPORT</button>
+        <button id="learn" class="nav_button">LEARN</button>
+        <button id="fix" class="nav_button">FIX</button>
+    </div>
+
+    <!-- Background Image Section -->
+    <div id="background">
+        <img src="assets/background.jpg" alt="background image">
+        <h1>Report Torn Nets</h1>
+    </div>
+
+    <!-- Report Section -->
+    <div>
+        <h1>Report torn nets</h1>
+        <p>Please submit the form below containing the location of the issue and a description of the damage. These locations will be added to our map and forwarded to the department of parks and recreation.</p>
+    </div>
+
+    <!-- Report Form Section -->
+    <div id="form-section">
+        <h2>Submit a Report</h2>
+        <form id="report-form">
+            <label for="location">Location of the damaged net:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="damage-description">Describe the damage:</label>
+            <textarea id="damage-description" name="damage-description" required></textarea>
+
+            <button type="submit" class="submit-button">Submit Report</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
